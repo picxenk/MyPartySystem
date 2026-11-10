@@ -21,10 +21,6 @@ class ParticleSystem {
 }
 
 
-
-
-
-
 // let ParticleSystem = function(position) {
 //   this.origin = position.copy();
 //   this.particles = [];
