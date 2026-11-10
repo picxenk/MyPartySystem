@@ -9,4 +9,6 @@ function draw() {
   background(51);
   system.addParticle();
   system.run();
+
+  console.log(system.particles.length);
 }
