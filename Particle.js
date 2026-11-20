@@ -1,9 +1,16 @@
+
 class Particle {
     constructor(position) {
-        this.acceleration = createVector(0, 0.05);
+        this.mass = 1;
+        this.acceleration = createVector(0, 0);
         this.velocity = createVector(random(-1, 1), random(-1, 0));
         this.position = position.copy();
         this.lifespan = 255;
+    }
+
+    applyForce(force) {
+        let f = p5.Vector.div(force, this.mass);
+        this.acceleration.add(f);
     }
 
     run() {
@@ -14,7 +21,10 @@ class Particle {
     update() {
         this.velocity.add(this.acceleration);
         this.position.add(this.velocity);
+
         this.lifespan -= 2;
+
+        this.acceleration.mult(0);
     }
 
     display() {
@@ -28,6 +38,7 @@ class Particle {
         return this.lifespan < 0;
     }
 }
+
 
 
 
